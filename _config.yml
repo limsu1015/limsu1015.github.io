@@ -45,6 +45,7 @@ github_username:  limsu1015
 
 # About Section
 # about_title: About Me
+about_profile_image: "images/profile.jpg"
 about_content: | # this will include new lines to allow paragraphs
   안녕하세요. 백엔드 개발자를 꿈꾸는 임수혁입니다.
 
@@ -53,7 +54,6 @@ about_content: | # this will include new lines to allow paragraphs
   대학에서 컴퓨터 공학을 전공하며 서버 개발과 데이터베이스에 깊은 흥미를 느꼈고, 다양한 팀 프로젝트를 통해 실제 서비스 구현 경험을 쌓아왔습니다.
 
   안정적이고 확장 가능한 시스템을 설계하고 구현하는 데 열정이 있으며, 끊임없는 학습과 성장을 통해 더 나은 개발자로 발전하고자 합니다.
-about_profile_image: "images/profile.jpg"
 
 
 content:
