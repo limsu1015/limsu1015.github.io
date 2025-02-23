@@ -45,7 +45,6 @@ github_username:  limsu1015
 
 # About Section
 # about_title: About Me
-about_profile_image: "images/profile.jpg"
 about_content: | # this will include new lines to allow paragraphs
   안녕하세요. 백엔드 개발자를 꿈꾸는 임수혁입니다.
 
@@ -54,6 +53,7 @@ about_content: | # this will include new lines to allow paragraphs
   대학에서 컴퓨터 공학을 전공하며 서버 개발과 데이터베이스에 깊은 흥미를 느꼈고, 다양한 팀 프로젝트를 통해 실제 서비스 구현 경험을 쌓아왔습니다.
 
   안정적이고 확장 가능한 시스템을 설계하고 구현하는 데 열정이 있으며, 끊임없는 학습과 성장을 통해 더 나은 개발자로 발전하고자 합니다.
+about_profile_image: "images/profile.jpg"
 
 
 content:
@@ -74,7 +74,7 @@ content:
         quote: >
           Dbre는 디자인 월 구독 서비스 입니다
         description: | # this will include new lines to allow paragraphs
-          ---
+
            **자동화된 환불 API 구현**  
             - 관리자 승인 전 예상 환불 금액 조회 API 구현  
             - 환불 금액이 결제 금액을 초과하지 않도록 검증  
@@ -85,8 +85,8 @@ content:
             - Admin 페이지를 통해 설문 응답을 **실시간으로 처리 및 유저 데이터 연계**  
 
            **PostgreSQL 쿼리 최적화로 성능 향상**  
-            - `select_related()`, `prefetch_related()` 적용하여 **불필요한 DB 쿼리 최소화**  
-            - `select_related()` 적용 후 API **응답 속도 60% 향상** (400ms → 160ms)  
+            - select_related(), prefetch_related() 적용하여 **불필요한 DB 쿼리 최소화**  
+            - select_related() 적용 후 API **응답 속도 30% 향상** (300ms → 210ms)  
 
             **Docker, Nginx, Gunicorn을 활용한 배포**
             - Docker를 활용하여 **개발 환경 통일화**
@@ -94,9 +94,10 @@ content:
 
             **기술 스택**
             - Django, PostgreSQL, Docker, Nginx, Gunicorn, Ncp
-          ---
+            ---
       - layout: top-middle
         title: 도르멍 프로젝트
+        link: github.com/Doreumung/Doreumung-BE
         icon: fab fa-github
         url: Doreumung/Doreumung-BE
         additional_links:
@@ -106,67 +107,96 @@ content:
         quote: 도르멍은 제주도 여행 일정을 장소 및 테마 선택 후 테마에 맞게 최적의 동선으로 일정을 짜주는 서비스입니다.
         description: | # this will include new lines to allow paragraphs
 
-          ** FastAPI 기반 비동기 RESTful API 구축**  
-            - FastAPI의 `async` 지원을 활용하여 **비동기 API 개발 및 최적화**  
-            - `Pydantic`을 이용한 **데이터 검증 및 스키마 관리**  
-            - `SQLAlchemy + Alembic`을 통한 **ORM 최적화 및 DB 마이그레이션 자동화**
+          **FastAPI 기반 비동기 RESTful API 구축**  
+          - FastAPI의 async 기능을 활용하여 **고성능 비동기 API 개발 및 최적화**  
+          - Pydantic을 이용한 데이터 검증 및 입력 유효성 검사 강화  
+          - SQLAlchemy + Alembic을 통해 **ORM 최적화 및 자동 마이그레이션 시스템 구축  
 
-          **일정 추천 알고리즘 구현**  
-            - 사용자가 선택한 장소와 테마에 따라 **최적의 일정을 추천**  
-            - **다양한 테마**에 따라 **다양한 일정 추천**  
+          **AI 기반 맞춤형 여행 추천 시스템 개발**  
+          - 협업 필터링(Collaborative Filtering) 알고리즘 적용하여 사용자 맞춤 여행 코스 추천
+          - 여행지 선호도 분석 및 유저 리뷰 데이터 기반 추천 로직 구현
 
-          **장소 및 테마 선택 후 일정 추천**  
-            - 사용자가 선택한 장소와 테마에 따라 **최적의 일정을 추천**  
-            - **다양한 테마**에 따라 **다양한 일정 추천**  
+          **PostgreSQL & Redis를 활용한 성능 최적화**  
+          - select_related(), prefetch_related() 적용하여 불필요한 DB 쿼리 최소화
+          - Redis를 활용한 비동기 캐싱 시스템 구축으로 API 응답 속도 40% 개선 (200ms → 120ms)  
+          - Celery + Redis 기반의 비동기 예약 처리 및 일정 알림 기능 개발 
 
-          **장소 및 테마 선택 후 일정 추천**  
-            - 사용자가 선택한 장소와 테마에 따라 **최적의 일정을 추천**  
-            - **다양한 테마**에 따라 **다양한 일정 추천**  
-
-          **장소 및 테마 선택 후 일정 추천**  
-            - 사용자가 선택한 장소와 테마에 따라 **최적의 일정을 추천**  
-            - **다양한 테마**에 따라 **다양한 일정 추천**  
+          **AWS 기반 클라우드 배포 및 무중단 운영**  
+          - EC2 + RDS + S3를 활용한 확장 가능한 클라우드 아키텍처 구축
+          - Docker + Nginx + Gunicorn + Uvicorn을 이용한 컨테이너 기반 배포 및 최적화
 
           **기술 스택**
-          - FastAPI, PostgreSQL, Docker, Nginx, Uvicorn, AWS
+          - FastAPI, PostgreSQL, SQLAlchemy, Alembic, Pydantic, Docker, Nginx, Uvicorn, Gunicorn, AWS
           ---
 
-  - title: Experience # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: The Boring Company
-        link: boringcompany.com
-        # link_text: boringcompany.com
-        sub_title: Senior Network System Administrator
-        caption: November 2017 - Present
-        quote: >
-          Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+      - layout: top-middle
+        title: act 프로젝트(sub project)
+        link: github.com/actgroupporject/act_project
+        icon: fab fa-github
+        url: actgroupporject/act_project
+        additional_links:
+          - title:  actgroupporject/act_project
+            icon: fab fa-github
+            url: github.com/actgroupporject/act_project
+        quote: 배우 구인 구직 서비스
         description: | # this will include new lines to allow paragraphs
-            Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.
 
-  - title: Education # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        title: Harvard University
-        caption: 2010 - 2013
-        sub_title: BSc Computer Science
-        quote: >
-          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
-        description: | # this will include new lines to allow paragraphs
-          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
+          ***이메일·문서 기반 지원 프로세스를 API로 간소화***
+          - RecruitViewSet.apply() API 구현하여 배우가 제작사 공고에 직접 지원할 수 있도록 개발
+          - @action(detail=True, methods=["post"])을 사용해 특정 공고 객체에 대한 지원 요청 처리
+          - get_object_or_404()로 지원 대상 Actor 및 Recruit 객체 조회
+          - Application.objects.get_or_create()를 활용해 중복 지원 방지
 
-          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
+          ***이미지 및 비디오 포트폴리오를 업로드하여 자신의 프로필을 강화할 수 있도록 업로드 시스템 구축***
+          - DRF Serializer에서 many=True, read_only=True 옵션을 사용해 한 번의 요청으로 관련 이미지·비디오 직렬화
+          - 업로드 시 perform_create() 메소드에서 현재 사용자(self.request.user.actor)와 업로드 파일을 자동으로 연동
 
-  - title: A Little More About Me
-    layout: text
-    content: | # this will include new lines to allow paragraphs
-      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - Rock climbing
-      - Gaming
-      - Knitting
-      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+          ***대량의 데이터 요청에도 빠른 응답을 제공하도록 API 성능을 최적화***
+          - DRF Serializer의 many=True 옵션 최적화로 리스트 응답 시 직렬화 속도 개선
+          - select_related(), prefetch_related()를 사용해 데이터베이스 쿼리 수 최소화
+          - 필요 시 DRF의 캐싱 메커니즘 적용
+          - API 응답 시간 200ms → 120ms로 40% 단축, DB 부하 감소
+
+          ***기술 스택***
+          - Django, SQLite   
+
+
+  # - title: Experience # Title for the section
+  #   layout: list # Type of content section (list/text)
+  #   content:
+  #     - layout: left
+  #       title: The Boring Company
+  #       link: boringcompany.com
+  #       # link_text: boringcompany.com
+  #       sub_title: Senior Network System Administrator
+  #       caption: November 2017 - Present
+  #       quote: >
+  #         Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+  #       description: | # this will include new lines to allow paragraphs
+  #           Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.
+
+  # - title: Education # Title for the section
+  #   layout: list # Type of content section (list/text)
+  #   content:
+  #     - layout: left
+  #       title: Harvard University
+  #       caption: 2010 - 2013
+  #       sub_title: BSc Computer Science
+  #       quote: >
+  #         Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+  #       description: | # this will include new lines to allow paragraphs
+  #         During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
+
+  #         I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
+
+  # - title: A Little More About Me
+  #   layout: text
+  #   content: | # this will include new lines to allow paragraphs
+  #     Alongside my interests in networks and software engineering some of my other interests and hobbies are:
+  #     - Rock climbing
+  #     - Gaming
+  #     - Knitting
+  #     - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
 
 
 
