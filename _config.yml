@@ -106,8 +106,8 @@ content:
             - list_select_related, list_prefetch_related 활용하여 Admin 페이지에서 N+1 문제 해결
 
             **Docker, Nginx, Gunicorn을 활용한 배포**
-            - Docker를 활용하여 **개발 환경 통일화**
-            - Nginx, Gunicorn을 활용하여 **안정적인 서버 운영**
+            - Docker를 활용하여 개발 환경 통일화
+            - Nginx, Gunicorn을 활용하여 안정적인 서버 운영
 
             **기술 스택**
             - Django, PostgreSQL, Docker, Nginx, Gunicorn, Ncp
