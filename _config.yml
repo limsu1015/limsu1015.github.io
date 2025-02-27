@@ -91,18 +91,19 @@ content:
           Dbre는 디자인 월 구독 서비스 입니다
         description: | # this will include new lines to allow paragraphs
 
-           **자동화된 환불 API 구현**  
+           **정기 결제 환불 API 구현**  
             - 관리자 승인 전 예상 환불 금액 조회 API 구현  
             - 환불 금액이 결제 금액을 초과하지 않도록 검증  
-            - PortOne API 연동하여 환불 승인 시 **자동 결제 취소 및 정산**  
+            - PortOne API 연동하여 환불 승인 시 자동 결제 취소 및 정산
+            - PortOne 빌링키를 이용한 예약 결제 시스템 구축
 
            **Tally Webhook 연동으로 설문 데이터 자동 저장**  
-            - 디자인 업무 폼을 웹훅 연동을 통해 **서버 DB에 자동 저장**  
-            - Admin 페이지를 통해 설문 응답을 **실시간으로 처리 및 유저 데이터 연계**  
+            - 디자인 업무 폼을 웹훅 연동을 통해 서버 DB에 자동 저장
+            - Admin 페이지를 통해 설문 응답을 실시간으로 처리 및 유저 데이터 연계
 
            **PostgreSQL 쿼리 최적화로 성능 향상**  
-            - select_related(), prefetch_related() 적용하여 **불필요한 DB 쿼리 최소화**  
-            - select_related() 적용 후 API **응답 속도 30% 향상** (300ms → 210ms)  
+            - select_related(), prefetch_related() 적용하여 불필요한 DB 쿼리 최소화
+            - list_select_related, list_prefetch_related 활용하여 Admin 페이지에서 N+1 문제 해결
 
             **Docker, Nginx, Gunicorn을 활용한 배포**
             - Docker를 활용하여 **개발 환경 통일화**
@@ -124,18 +125,9 @@ content:
         description: | # this will include new lines to allow paragraphs
 
           **FastAPI 기반 비동기 RESTful API 구축**  
-          - FastAPI의 async 기능을 활용하여 **고성능 비동기 API 개발 및 최적화**  
+          - FastAPI의 async 기능을 활용하여 비동기 API 개발 및 최적화
           - Pydantic을 이용한 데이터 검증 및 입력 유효성 검사 강화  
-          - SQLAlchemy + Alembic을 통해 **ORM 최적화 및 자동 마이그레이션 시스템 구축  
-
-          **AI 기반 맞춤형 여행 추천 시스템 개발**  
-          - 협업 필터링(Collaborative Filtering) 알고리즘 적용하여 사용자 맞춤 여행 코스 추천
-          - 여행지 선호도 분석 및 유저 리뷰 데이터 기반 추천 로직 구현
-
-          **PostgreSQL & Redis를 활용한 성능 최적화**  
-          - select_related(), prefetch_related() 적용하여 불필요한 DB 쿼리 최소화
-          - Redis를 활용한 비동기 캐싱 시스템 구축으로 API 응답 속도 40% 개선 (200ms → 120ms)  
-          - Celery + Redis 기반의 비동기 예약 처리 및 일정 알림 기능 개발 
+          - SQLAlchemy + Alembic을 통해 ORM 최적화 및 자동 마이그레이션 시스템 구축  
 
           **AWS 기반 클라우드 배포 및 무중단 운영**  
           - EC2 + RDS + S3를 활용한 확장 가능한 클라우드 아키텍처 구축
@@ -170,8 +162,7 @@ content:
           ***대량의 데이터 요청에도 빠른 응답을 제공하도록 API 성능을 최적화***
           - DRF Serializer의 many=True 옵션 최적화로 리스트 응답 시 직렬화 속도 개선
           - select_related(), prefetch_related()를 사용해 데이터베이스 쿼리 수 최소화
-          - 필요 시 DRF의 캐싱 메커니즘 적용
-          - API 응답 시간 200ms → 120ms로 40% 단축, DB 부하 감소
+          - 필요 시 DRF의 캐싱 메커니즘 적용 API 응답 단축, DB 부하 감소
 
           ***기술 스택***
           - Django, SQLite   
