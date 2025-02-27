@@ -176,7 +176,7 @@ content:
           ***기술 스택***
           - Django, SQLite   
 
-  - title: Skill # Title for the section
+  - title: 기술 스택 # Title for the section
     layout: text # Type of content section (list/text)
     content: | # this will include new lines to allow paragraphs
 
