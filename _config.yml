@@ -51,7 +51,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   ***인테리어 현장에서 개발자로의 전환***
 
-  저는 원래 인테리어 현장에서 일하며 다양한 팀원들과의 협력과 프로젝트를 수행해 왔습니다. 하지만 점차적으로 일의 반복성과 기술적 제약이 저에게 새로운 도전을 갈망하게 만들었습니다. 이러한 마음을 가지고 사이버대학교 컴퓨터공학과에 진학하게 되었고, 수업에서 프로그래밍 언어와 알고리즘을 배우면서 코딩에 몰입하게 되었습니다. 밤을 새워가며 공부할 때에도 힘들기보다 더 배우고자 하는 욕심이 생겼습니다.
+  인테리어 현장에서 일하며 다양한 팀원들과의 협력과 프로젝트를 수행해 왔습니다. 하지만 점차적으로 일의 반복성과 기술적 제약이 저에게 새로운 도전을 갈망하게 만들었습니다. 이러한 마음을 가지고 사이버대학교 컴퓨터공학과에 진학하게 되었고, 수업에서 프로그래밍 언어와 알고리즘을 배우면서 코딩에 몰입하게 되었습니다. 밤을 새워가며 공부할 때에도 힘들기보다 더 배우고자 하는 욕심이 생겼습니다.
 
   이 경험은 제가 진로를 바꾸기로 결심하는 계기가 되었고, 인테리어 현장에서 쌓은 문제 해결 능력과 팀워크 경험을 바탕으로 소프트웨어 개발이라는 새로운 도전에서 제 역량을 발휘하고 싶습니다.
 
@@ -73,6 +73,25 @@ about_content: | # this will include new lines to allow paragraphs
 
 
 content:
+  - title: Skill # Title for the section
+    layout: text # Type of content section (list/text)
+    content: | # this will include new lines to allow paragraphs
+
+      ## **Backend**
+      - **Django**: RESTful API 개발, DRF 활용한 직렬화,
+      - **FastAPI**: RESTful API 개발, 비동기 API 최적화  
+
+      ## **DevOps & 배포**
+      - **Docker**: 컨테이너 기반 개발 환경 구축  
+      - **Nginx & Gunicorn & Uvicorn**: 안정적인 웹서버 및 WSGI/ASGI 애플리케이션 배포  
+      - **AWS (EC2, RDS, S3)**: 클라우드 인프라 관리 및 확장성 확보  
+      - **NCP (Naver Cloud Platform)**: 서버 및 데이터베이스 운영 
+
+      ## **Database & Performance**
+      - **SQLite, MySQL, PostgreSQL**: 관계형 DB 설계 및 인덱싱 최적화  
+      - **Redis**: API 응답 속도 개선 및 데이터 캐싱  
+
+
   - title: Projects # Title for the section
     layout: list # Type of content section (list/text)
     content:
@@ -92,26 +111,29 @@ content:
         description: | # this will include new lines to allow paragraphs
 
            **정기 결제 환불 API 구현**  
-            - 관리자 승인 전 예상 환불 금액 조회 API 구현  
-            - 환불 금액이 결제 금액을 초과하지 않도록 검증  
-            - PortOne API 연동하여 환불 승인 시 자동 결제 취소 및 정산
-            - PortOne 빌링키를 이용한 예약 결제 시스템 구축
+            -	PortOne 빌링키를 이용하여 정기 결제 API 구축
+            -	python-dateutil 라이브러리의 relativedelta를 활용하여 정기 결제 주기 설정
+            -	APScheduler를 사용하여 예약 결제 작업 스케줄링 및 자동 실행
+            -	구독 중 취소 요청 시, 남은 이용 기간이 끝난 후 자동으로 구독이 만료되도록 APSchedular를 활용하여 기간 만료 후 구독 상태 변경 되도록 api구현
+            -	구독 취소 시 PortOne SDK 호출하여 정기 예약 내역이 있으면 즉시 취소 처리
+            -	환불 요청 시 (총 사용 가능 일수 - 사용 일수)를 계산하여 환불 금액 산정 및 정산
+            -	PortOne API 연동하여 Admin 승인 후 결제 취소 및 정산 처리
+            -	관리자 승인 전, 예상 환불 금액을 조회할 수 있는 API 구현
+            - 환불 금액이 결제 금액을 초과하지 않도록 PortOne SDK를 통해 환불 가능 금액을 조회한 후 검증 로직 추가
 
            **Tally Webhook 연동으로 설문 데이터 자동 저장**  
-            - 디자인 업무 폼을 웹훅 연동을 통해 서버 DB에 자동 저장
-            - Admin 페이지를 통해 설문 응답을 실시간으로 처리 및 유저 데이터 연계
+            - 디자인 업무 폼을 Webhook 연동을 통해 서버 DB에 저장
+            - Admin 페이지에 DB에 저장된 설문 응답을 불러와 실시간으로 처리 및 유저 데이터 연계 api 구현
 
            **PostgreSQL 쿼리 최적화로 성능 향상**  
-            - select_related(), prefetch_related() 적용하여 불필요한 DB 쿼리 최소화
-            - list_select_related, list_prefetch_related 활용하여 Admin 페이지에서 N+1 문제 해결
+            - Admin 페이지에서 Tally 설문 응답 데이터를 불러오는 과정에 object.all() 쿼리 사용으로 인해 발생한 N+1를 select_related() 적용하여 해결
+            - Join을 활용한 최적화로 불필요한 추가 쿼리 감소 및 페이지 로딩 속도 향상
 
             **Docker, Nginx, Gunicorn을 활용한 배포**
             - Docker를 활용하여 개발 환경 통일화
+            - Github Action을 활용한 CI/CD 구축
             - Nginx, Gunicorn을 활용하여 안정적인 서버 운영
 
-            **기술 스택**
-            - Django, PostgreSQL, Docker, Nginx, Gunicorn, Ncp
-            ---
       - layout: top-middle
         title: 도르멍 프로젝트
         link: github.com/Doreumung/Doreumung-BE
@@ -133,9 +155,6 @@ content:
           - EC2 + RDS + S3를 활용한 확장 가능한 클라우드 아키텍처 구축
           - Docker + Nginx + Gunicorn + Uvicorn을 이용한 컨테이너 기반 배포 및 최적화
 
-          **기술 스택**
-          - FastAPI, PostgreSQL, SQLAlchemy, Alembic, Pydantic, Docker, Nginx, Uvicorn, Gunicorn, AWS
-          ---
 
       - layout: top-middle
         title: act 프로젝트(sub project)
@@ -163,27 +182,6 @@ content:
           - DRF Serializer의 many=True 옵션 최적화로 리스트 응답 시 직렬화 속도 개선
           - select_related(), prefetch_related()를 사용해 데이터베이스 쿼리 수 최소화
           - 필요 시 DRF의 캐싱 메커니즘 적용 API 응답 단축, DB 부하 감소
-
-          ***기술 스택***
-          - Django, SQLite   
-
-  - title: 기술 스택 # Title for the section
-    layout: text # Type of content section (list/text)
-    content: | # this will include new lines to allow paragraphs
-
-      ## **Backend**
-      - **Django**: RESTful API 개발, DRF 활용한 직렬화,
-      - **FastAPI**: RESTful API 개발, 비동기 API 최적화  
-
-      ## **DevOps & 배포**
-      - **Docker**: 컨테이너 기반 개발 환경 구축  
-      - **Nginx & Gunicorn & Uvicorn**: 안정적인 웹서버 및 WSGI/ASGI 애플리케이션 배포  
-      - **AWS (EC2, RDS, S3)**: 클라우드 인프라 관리 및 확장성 확보  
-      - **NCP (Naver Cloud Platform)**: 서버 및 데이터베이스 운영 
-
-      ## **Database & Performance**
-      - **SQLite, MySQL, PostgreSQL**: 관계형 DB 설계 및 인덱싱 최적화  
-      - **Redis**: API 응답 속도 개선 및 데이터 캐싱  
 
 
 
