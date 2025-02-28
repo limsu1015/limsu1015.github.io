@@ -111,15 +111,10 @@ content:
         description: | # this will include new lines to allow paragraphs
 
            **정기 결제 환불 API 구현**  
-            -	PortOne 빌링키를 이용하여 정기 결제 API 구축
-            -	python-dateutil 라이브러리의 relativedelta를 활용하여 정기 결제 주기 설정
-            -	APScheduler를 사용하여 예약 결제 작업 스케줄링 및 자동 실행
-            -	구독 중 취소 요청 시, 남은 이용 기간이 끝난 후 자동으로 구독이 만료되도록 APSchedular를 활용하여 기간 만료 후 구독 상태 변경 되도록 api구현
-            -	구독 취소 시 PortOne SDK 호출하여 정기 예약 내역이 있으면 즉시 취소 처리
-            -	환불 요청 시 (총 사용 가능 일수 - 사용 일수)를 계산하여 환불 금액 산정 및 정산
-            -	PortOne API 연동하여 Admin 승인 후 결제 취소 및 정산 처리
-            -	관리자 승인 전, 예상 환불 금액을 조회할 수 있는 API 구현
-            - 환불 금액이 결제 금액을 초과하지 않도록 PortOne SDK를 통해 환불 가능 금액을 조회한 후 검증 로직 추가
+            - 관리자 승인 전 예상 환불 금액 조회 API 구현  
+            - 환불 금액이 결제 금액을 초과하지 않도록 검증  
+            - PortOne API 연동하여 환불 승인 시 자동 결제 취소 및 정산
+            - PortOne 빌링키를 이용한 예약 결제 시스템 구축
 
            **Tally Webhook 연동으로 설문 데이터 자동 저장**  
             - 디자인 업무 폼을 Webhook 연동을 통해 서버 DB에 저장
